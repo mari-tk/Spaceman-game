@@ -2,7 +2,9 @@
 Is a word guessing game. Computer thinks of a word, the player guesses it by choosing letters from the alphabet. There are certain amount of guesses - to draw a spaceship. After player guesses the word, they win. If player used all guesses and still not guessed the word, they lose.
 
 
+
 Game action.
+
 
 
 After user opens the game, it shows up empty board with clickable "Start" button on the center of the page. 
@@ -16,11 +18,13 @@ After user clicked on the Start button, game state variables are set to default.
 Also function init() is called.
 
 
-constants
+
+/*----- constants -----*/
 
 //English alphabet
 
 ALPHABET = [a,b,c....] 
+
 
 
 /*----- app's state (variables) -----*/
@@ -36,6 +40,7 @@ Game state variables:
 -usedLetters
 
 
+
 /*----- cached element references -----*/
 
 startButton = document.getElementById(start)
@@ -43,11 +48,13 @@ startButton = document.getElementById(start)
 alphabetContainer = document.getElementById(alphabet)
 
 
+
 /*----- event listeners -----*/
 
 startButton.addEventListener('click', init);
 
 alphabetContainer.addEventListener('click', makeMove);
+
 
 
 /*----- functions -----*/
@@ -89,6 +96,7 @@ function init() { //Function resets all state variables.
 }
 
 
+
 // Calls all page renders: renderSpaceship, renderGuessedWord, renderAlphabet
 
 function render() {
@@ -113,6 +121,7 @@ function render() {
 }
 
 
+
 // get value from spaceship obj and if spaceship component visibility === true show component
 
 function renderSpaceship() {
@@ -128,6 +137,7 @@ function renderSpaceship() {
   }
 
 }
+
 
 
 // for each letter in guessed word create elenent span and set innerText=letter if letter is included; else add ' ' to the span
@@ -155,6 +165,7 @@ function renderGuessedWord() {
 }
 
 
+
 // renders alphabet on the page and disables clicked letter buttons
 
 function renderAlphabet() {
@@ -170,6 +181,7 @@ function renderAlphabet() {
   })
 
 }
+
 
 
 // this function is a callback of the alphabetContainer event listener. It gets event from event listener and we can get target to find out which button was clicked
