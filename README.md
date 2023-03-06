@@ -10,26 +10,26 @@ After user clicked on the Start button, game state variables are set to default.
 
 Also function init() is called.
 
-/*----- constants -----*/
+constants
 //English alphabet
 ALPHABET = [a,b,c....] 
 
-/*----- app's state (variables) -----*/
+app's state (variables)
 Game state variables:
 -guessedWord - array of letters from the guessed word set to []
 -wordBank - array of possible words for Computer to choose from. Hardcoded with default words array
 -spaceship
 -usedLetters
 
-/*----- cached element references -----*/
+cached element references
 startButton = document.getElementById(start)
 alphabetContainer = document.getElementById(alphabet)
 
-/*----- event listeners -----*/
+event listeners
 startButton.addEventListener('click', init);
 alphabetContainer.addEventListener('click', makeMove);
 
-/*----- functions -----*/
+functions
 function init() { //Function resets all state variables. 
   // Makes Start button and full screen overlay invisible
   startButton.style.visibility=false
