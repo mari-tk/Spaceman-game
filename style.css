@@ -1,0 +1,48 @@
+#gameboard {
+  display:grid;
+  grid-template-areas:
+  "start start"
+  "astronaut spaceship"
+  "word word"
+  "letter letter";
+  justify-items: center;
+}
+
+#start{
+  height: 50px;
+  width: 100px;
+  grid-area: start
+}
+
+#spaceman {
+  grid-area: astronaut;
+  display: none
+}
+
+#spaceman img {
+  height: 300px;
+  width: 300px;
+}
+
+#spaceship {
+  grid-area: spaceship;
+  display: none
+}
+
+#spaceship img {
+  height: 300px;
+  width: 300px;
+}
+
+#word {
+  height: 300px;
+  width: 300px;
+  grid-area: word;
+  /* display: none */
+}
+
+#alphabet {
+  height: 50px;
+  width: 100px;
+  grid-area: letter;
+}

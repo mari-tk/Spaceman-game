@@ -24,16 +24,14 @@ Also function init() is called.
 //English alphabet
 
 ALPHABET = [a,b,c....] 
-
+WORDBANK - array of possible words for Computer to choose from. Hardcoded with default words array
 
 
 /*----- app's state (variables) -----*/
 
 Game state variables:
 
--guessedWord - array of letters from the guessed word set to []
-
--wordBank - array of possible words for Computer to choose from. Hardcoded with default words array
+-guessedWord
 
 -spaceship
 
@@ -61,7 +59,7 @@ alphabetContainer.addEventListener('click', makeMove);
 
 function init() { //Function resets all state variables. 
 
-  // Makes Start button and full screen overlay invisible
+  // Makes Start button invisible
 
   startButton.style.visibility=false
 
