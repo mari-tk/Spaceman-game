@@ -1,8 +1,8 @@
 #gameboard {
   display:grid;
   grid-template-areas:
-  "start start"
   "astronaut spaceship"
+  "start-btn start-btn"
   "word word"
   "letter letter";
   justify-items: center;
@@ -11,12 +11,11 @@
 #start{
   height: 50px;
   width: 100px;
-  grid-area: start
+  grid-area: start-btn;
 }
 
 #spaceman {
   grid-area: astronaut;
-  display: none
 }
 
 #spaceman img {
@@ -26,7 +25,6 @@
 
 #spaceship {
   grid-area: spaceship;
-  display: none
 }
 
 #spaceship img {
@@ -38,11 +36,10 @@
   height: 300px;
   width: 300px;
   grid-area: word;
-  /* display: none */
 }
 
 #alphabet {
-  height: 50px;
-  width: 100px;
+  height: 300px;
+  width: 350px;
   grid-area: letter;
 }
