@@ -5,10 +5,10 @@ body {
 #gameboard {
   display:grid;
   grid-template-areas:
-  "astronaut spaceship"
-  "start-btn start-btn"
-  "word word"
-  "alphabet alphabet";
+  "astronaut spaceship image"
+  "start-btn start-btn start-btn"
+  "word word word"
+  "alphabet alphabet alphabet";
   justify-items: center;
 }
 
@@ -31,13 +31,14 @@ body {
   grid-area: spaceship;
 }
 
-#spaceship img {
+#spaceship-img {
   height: 300px;
   width: 300px;
+  grid-area: image
 }
 
 #word {
-  height: 300px;
+  height: 100px;
   width: 300px;
   grid-area: word;
   text-align: center;
@@ -59,4 +60,5 @@ span {
   margin-top: 100px;
   font-size: 5rem;
   text-align: center;
+
 }
