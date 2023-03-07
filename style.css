@@ -5,11 +5,23 @@ body {
 #gameboard {
   display:grid;
   grid-template-areas:
-  "astronaut spaceship image"
+  "welcome-msg welcome-msg welcome-msg"
+  "astronaut spaceship-components image"
   "start-btn start-btn start-btn"
   "word word word"
   "alphabet alphabet alphabet";
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-evenly;
   justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+
+#welcome-msg {
+  margin: 50px;
+  font-size: 2rem;
+  text-align: center;
+  grid-column: span 3;
 }
 
 #start{
@@ -28,7 +40,7 @@ body {
 }
 
 #spaceship {
-  grid-area: spaceship;
+  grid-area: spaceship-components;
 }
 
 #spaceship-img {
@@ -56,9 +68,9 @@ body {
   font-size: 2rem;
 }
 
-span {
+#word span {
+  margin: 10px;
   margin-top: 100px;
   font-size: 5rem;
   text-align: center;
-
 }
