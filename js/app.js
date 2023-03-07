@@ -33,6 +33,9 @@ function init() {
   const rand = Math.floor(Math.random() * WORDBANK.length);
   guessedWord = (WORDBANK[rand].split(""));
 
+  //Debugging purposes only - display current word
+  console.log(WORDBANK[rand]);
+
   //Calls function render()
   render(); 
 }
@@ -71,26 +74,36 @@ function renderSpaceship() {
 // for each letter in guessed word create elenent span and set innerText=letter if letter is included; else add ' ' to the span
 function renderGuessedWord() {
   guessedWord.forEach(letter => {
-    let span = document.createElement('span');
-    if (usedLetters.includes(letter)){
-      span.innerText = letter;
+    //check if span with id not exists then create span
+    if(!document.getElementById('span-' + letter)) {
+      let span = document.createElement('span');
+      span.id = 'span-' + letter;
+      document.getElementById('word').appendChild(span);
+    }
+
+    if(usedLetters.includes(letter)) {
+      document.getElementById('span-' + letter).innerText = letter;
     }
     else {
-      span.innerText = ' ';
+      document.getElementById('span-' + letter).innerText = '_';
     }
-    document.getElementById('word').appendChild(span);
   }) 
 }
 
 // renders alphabet on the page and disables clicked letter buttons
 function renderAlphabet() {
   ALPHABET.split("").forEach(letter => {
-    const letterBtn = document.createElement('button');
-    document.getElementById('alphabet').appendChild(letterBtn);
-    letterBtn.innerText = letter;
+    //check if the button is not on the page then add it
+    if (!document.getElementById('letter-' + letter)) {
+      const letterBtn = document.createElement('button');
+      document.getElementById('alphabet').appendChild(letterBtn);
+      letterBtn.innerText = letter;
+      letterBtn.id = 'letter-' + letter;
+    }
+
     //check if the letter was clicked then disable it
-    if (usedLetters.includes(letter)) {
-      letterBtn.disabled = true
+    if (usedLetters.includes(letter.toLowerCase())) {
+      document.getElementById('letter-' + letter).disabled = true
     }
   })
 }
@@ -99,7 +112,6 @@ function renderAlphabet() {
 function makeMove(evt) {
   if (evt.target.tagName !=='BUTTON') return
   const letter = evt.target.innerText
-  usedLetters.push(letter);
-  console.log('HERE YAY')
+  usedLetters.push(letter.toLowerCase());
   render()
 }
