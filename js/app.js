@@ -40,6 +40,7 @@ function init() {
   render(); 
 }
 
+//TODO: refactor rendering, convert to functions
 // Calls all page renders: renderSpaceship, renderGuessedWord, renderAlphabet
 function render() {
   // Set all spaceship components to be invisible

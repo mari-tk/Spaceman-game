@@ -1,3 +1,7 @@
+body {
+  font-family: Helvetica,Arial,sans-serif;
+}
+
 #gameboard {
   display:grid;
   grid-template-areas:
@@ -36,10 +40,23 @@
   height: 300px;
   width: 300px;
   grid-area: word;
+  text-align: center;
+  margin-top: 100px;
 }
 
 #alphabet {
-  height: 300px;
-  width: 350px;
+  height: 200px;
+  width: 550px;
   grid-area: letter;
+  text-align: center;
+}
+
+#alphabet button {
+  font-size: 2rem;
+}
+
+span {
+  margin-top: 100px;
+  font-size: 5rem;
+  text-align: center;
 }
