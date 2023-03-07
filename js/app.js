@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const WORDBANK = ['jupiter', 'saturn', 'uranus', 'mercury', 'venus']
-//background space theme music?
+//background Space theme music?
 
 /*----- app's state (variables) -----*/
 let guessedWord;
@@ -73,19 +73,19 @@ function renderSpaceship() {
 
 // for each letter in guessed word create elenent span and set innerText=letter if letter is included; else add ' ' to the span
 function renderGuessedWord() {
-  guessedWord.forEach(letter => {
+  guessedWord.forEach((letter, idx) => {
     //check if span with id not exists then create span
-    if(!document.getElementById('span-' + letter)) {
+    if(!document.getElementById('span-' + idx)) {
       let span = document.createElement('span');
-      span.id = 'span-' + letter;
+      span.id = 'span-' + idx;
       document.getElementById('word').appendChild(span);
     }
 
     if(usedLetters.includes(letter)) {
-      document.getElementById('span-' + letter).innerText = letter;
+      document.getElementById('span-' + idx).innerText = letter;
     }
     else {
-      document.getElementById('span-' + letter).innerText = '_';
+      document.getElementById('span-' + idx).innerText = '_';
     }
   }) 
 }
