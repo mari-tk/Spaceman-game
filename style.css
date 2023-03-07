@@ -6,6 +6,7 @@ body {
   display:grid;
   grid-template-areas:
   "welcome-msg welcome-msg welcome-msg"
+  "rules-msg rules-msg rules-msg"
   "astronaut spaceship-components image"
   "start-btn start-btn start-btn"
   "word word word"
@@ -18,10 +19,19 @@ body {
 }
 
 #welcome-msg {
-  margin: 50px;
+  margin: 50px; 
   font-size: 2rem;
   text-align: center;
   grid-column: span 3;
+  grid-area: welcome-msg;
+}
+
+#rules-msg {
+  font-size: 1rem;
+  text-align: center;
+  grid-column: span 3;
+  grid-area: rules-msg;
+  margin-bottom: 10px; 
 }
 
 #start{
