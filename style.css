@@ -8,7 +8,7 @@ body {
   "astronaut spaceship"
   "start-btn start-btn"
   "word word"
-  "letter letter";
+  "alphabet alphabet";
   justify-items: center;
 }
 
@@ -47,7 +47,7 @@ body {
 #alphabet {
   height: 200px;
   width: 550px;
-  grid-area: letter;
+  grid-area: alphabet;
   text-align: center;
 }
 
