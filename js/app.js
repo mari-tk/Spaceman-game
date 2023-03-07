@@ -7,6 +7,7 @@ const WORDBANK = ['jupiter', 'saturn', 'uranus', 'mercury', 'venus']
 let guessedWord;
 let spaceship;
 let usedLetters;
+let wrongLetter;
 
 /*----- cached element references -----*/
 let startButton = document.getElementById('start');
@@ -26,7 +27,7 @@ function init() {
     {wings: './img/spaceship', visible:false},
     {fuel: './img/spaceship', visible:false}
   ]
-
+  wrongLetter = 0;
   usedLetters = [];
 
   //Chooses random word from WORDBANK and saves each letter to the guessedWord array
@@ -53,23 +54,13 @@ function render() {
 
   // Function calls further render functions according to current game state: 
   renderGuessedWord();
-  renderSpaceship();
   renderAlphabet();
+  renderSpaceship();
 
   //Makes spaceman invisible if player used all 5 guesses and makes another unsuccessful turn
   // if (everySpaceshipComponentIsVisible()) {
   //   document.getElementById(spaceman).visibility = false
   // }
-}
-
-// get value from spaceship obj and if spaceship component visibility === true show component
-function renderSpaceship() {
-  for (component of spaceship) {
-    //if component visibility === true show component
-    if (component.visible) {
-      document.getElementById(Object.keys(component)[0]).style.display = 'block';
-    }
-  }
 }
 
 // for each letter in guessed word create elenent span and set innerText=letter if letter is included; else add ' ' to the span
@@ -109,10 +100,31 @@ function renderAlphabet() {
   })
 }
 
+// get value from spaceship obj and if spaceship component visibility === true show component
+function renderSpaceship() {
+  for (component of spaceship) {
+
+    //if component visibility === true show component
+    if (component.visible) {
+      document.getElementById(Object.keys(component)[0]).style.display = 'block';
+    }
+  }
+}
+
 // this function is a callback of the alphabetContainer event listener. It gets event from event listener and we can get target to find out which button was clicked
 function makeMove(evt) {
   if (evt.target.tagName !=='BUTTON') return
   const letter = evt.target.innerText
   usedLetters.push(letter.toLowerCase());
-  render()
+  //if user clicked the letter that is not included in word, add +1 to the wrongLetter
+  if(!guessedWord.includes(letter.toLowerCase())) {
+    wrongLetter+=1
+  }
+
+  //handle wrong letters
+  for(i=0; i<wrongLetter;  i++) {
+    spaceship[i].visible = true
+  }
+
+  render();
 }
