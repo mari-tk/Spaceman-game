@@ -37,6 +37,9 @@ function init() {
   //Debugging purposes only - display current word
   console.log(WORDBANK[rand]);
 
+  //Set all buttons to active and clickable again
+
+
   //Calls function render()
   render(); 
 }
@@ -97,6 +100,7 @@ function renderAlphabet() {
     if (usedLetters.includes(letter.toLowerCase())) {
       document.getElementById('letter-' + letter).disabled = true
     }
+    else document.getElementById('letter-' + letter).disabled = false
   })
 }
 
@@ -118,6 +122,7 @@ function makeMove(evt) {
   usedLetters.push(letter.toLowerCase());
   //if user clicked the letter that is not included in word, add +1 to the wrongLetter
   if(!guessedWord.includes(letter.toLowerCase())) {
+    if (wrongLetter>=spaceship.length) return showLoss()
     wrongLetter+=1
   }
 
@@ -127,4 +132,13 @@ function makeMove(evt) {
   }
 
   render();
+}
+
+function showLoss() {
+  if (confirm("You lost! Would you like to try again?")) {
+    console.log("You pressed OK!");
+    init();
+  } else {
+    console.log("You pressed Cancel!");
+  }
 }
