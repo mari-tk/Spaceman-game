@@ -50,11 +50,12 @@ body {
 }
 
 #word {
-  height: 100px;
-  width: 300px;
+  /* height: 100px;
+  width: 300px; */
   grid-area: word;
   text-align: center;
-  margin-top: 100px;
+  margin: 50px;
+  grid-column: span 3;
 }
 
 #alphabet {
