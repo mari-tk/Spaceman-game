@@ -1,6 +1,6 @@
 /*----- constants -----*/
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const WORDBANK = ['jupiter', 'saturn', 'uranus', 'mercury', 'venus']
+const WORDBANK = ['jupiter', 'saturn', 'uranus', 'mercury', 'venus', 'earth', 'neptune', 'mars']
 //background Space theme music?
 
 /*----- app's state (variables) -----*/
