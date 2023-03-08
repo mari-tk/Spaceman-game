@@ -5,12 +5,12 @@ body {
 #gameboard {
   display:grid;
   grid-template-areas:
-  "welcome-msg welcome-msg welcome-msg"
-  "rules-msg rules-msg rules-msg"
-  "astronaut spaceship-components image"
-  "start-btn start-btn start-btn"
-  "word word word"
-  "alphabet alphabet alphabet";
+  "welcome-msg welcome-msg"
+  "rules-msg rules-msg"
+  "astronaut spaceship-components"
+  "start-btn start-btn"
+  "word word"
+  "alphabet alphabet";
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-evenly;
   justify-items: center;
@@ -22,14 +22,14 @@ body {
   margin: 50px; 
   font-size: 2rem;
   text-align: center;
-  grid-column: span 3;
+  grid-column: span 2;
   grid-area: welcome-msg;
 }
 
 #rules-msg {
   font-size: 1rem;
   text-align: center;
-  grid-column: span 3;
+  grid-column: span 2;
   grid-area: rules-msg;
   margin-bottom: 10px; 
 }
@@ -53,17 +53,11 @@ body {
   grid-area: spaceship-components;
 }
 
-#spaceship-img {
-  height: 300px;
-  width: 300px;
-  grid-area: image
-}
-
 #word {
   grid-area: word;
   text-align: center;
   margin: 50px;
-  grid-column: span 3;
+  grid-column: span 2;
   font-size: 5rem;
   text-align: center;
 }
