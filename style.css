@@ -1,5 +1,7 @@
 body {
   font-family: Helvetica,Arial,sans-serif;
+  min-width: 600px;
+  margin: 0 auto;
 }
 
 #gameboard {
@@ -7,11 +9,11 @@ body {
   grid-template-areas:
   "welcome-msg welcome-msg"
   "rules-msg rules-msg"
-  "astronaut spaceship-components"
+  "astronaut scene"
   "start-btn start-btn"
   "word word"
   "alphabet alphabet";
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
@@ -45,12 +47,17 @@ body {
 }
 
 #spaceman img {
-  height: 300px;
-  width: 300px;
+  height: 100px;
+  width: 100px;
 }
 
-#spaceship {
-  grid-area: spaceship-components;
+#scene {
+  grid-area: scene;
+  background-image: url("./img/backgroung.png");
+  background-color: grey;
+  background-size: contain; 
+  height: 500px;
+  width: 500px;
 }
 
 #word {
@@ -78,4 +85,80 @@ body {
   margin-top: 100px;
   font-size: 5rem;
   text-align: center;
+}
+
+#spaceship-components {
+  width: 100%;
+  text-align: center;
+}
+
+#top {
+  background-image: url("./img/top.png"); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+#body {
+  background-image: url("./img/body+halo.png"); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 120px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#lights {
+  background-image: url("./img/lights.png");
+  background-size: contain; 
+  height: 50px; 
+  background-repeat: no-repeat;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#bottom {
+  background-image: url(./img/bottom.png);
+  background-size: contain;
+  height: 50px;
+  background-repeat: no-repeat;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#beams {
+  background-image: url(./img/beams.png);
+  background-size: contain;
+  height: 200px;
+  background-repeat: no-repeat;
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* .container {
+  margin: auto;
+} */
+
+.top {
+
+}
+.body {
+
+}
+.lights {
+  
+}
+.bottom {
+  
+}
+.beams {
+  
 }

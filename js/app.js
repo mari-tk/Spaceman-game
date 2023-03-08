@@ -24,11 +24,11 @@ alphabetContainer.addEventListener('click', makeMove);
 function init() {
   // Set spaceship default values to invisible
   spaceship = [
+    {top: './img/spaceship', visible:false},
     {body: './img/spaceship', visible:false},
-    {cabin: './img/spaceship', visible:false},
-    {window: './img/spaceship', visible:false},
-    {wings: './img/spaceship', visible:false},
-    {fuel: './img/spaceship', visible:false}
+    {lights: './img/spaceship', visible:false},
+    {bottom: './img/spaceship', visible:false},
+    {beams: './img/spaceship', visible:false}
   ]
   wrongLetter = 0;
   usedLetters = [];
