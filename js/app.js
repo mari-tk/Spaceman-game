@@ -8,10 +8,13 @@ let guessedWord;
 let spaceship;
 let usedLetters;
 let wrongLetter;
+let currentWord;
+let currentWordEl;
 
 /*----- cached element references -----*/
 let startButton = document.getElementById('start');
 alphabetContainer = document.getElementById('alphabet');
+currentWordEl = document.getElementById('word');
 
 /*----- event listeners -----*/
 startButton.addEventListener('click', init);
@@ -29,13 +32,16 @@ function init() {
   ]
   wrongLetter = 0;
   usedLetters = [];
+  currentWordEl.innerText = '';
+  currentWordEl.style.color = 'black';
 
   //Chooses random word from WORDBANK and saves each letter to the guessedWord array
   const rand = Math.floor(Math.random() * WORDBANK.length);
   guessedWord = (WORDBANK[rand].split(""));
 
   //Debugging purposes only - display current word
-  console.log(WORDBANK[rand]);
+  currentWord = WORDBANK[rand];
+  console.log(currentWord);
 
   //Set all buttons to active and clickable again
 
@@ -135,10 +141,12 @@ function makeMove(evt) {
 }
 
 function showLoss() {
-  if (confirm("You lost! Would you like to try again?")) {
-    console.log("You pressed OK!");
-    init();
-  } else {
-    console.log("You pressed Cancel!");
-  }
+  //Show guessed word in red
+  const word = document.getElementById("word");
+  word.innerText = currentWord;
+  word.style.color = 'red';
+
+  //create button try again
+  startButton.innerText = 'TRY AGAIN ?';
+  startButton.style.display = 'block';
 }

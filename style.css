@@ -66,6 +66,8 @@ body {
   text-align: center;
   margin: 50px;
   grid-column: span 3;
+  font-size: 5rem;
+  text-align: center;
 }
 
 #alphabet {
