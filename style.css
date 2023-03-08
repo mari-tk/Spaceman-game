@@ -60,8 +60,6 @@ body {
 }
 
 #word {
-  /* height: 100px;
-  width: 300px; */
   grid-area: word;
   text-align: center;
   margin: 50px;

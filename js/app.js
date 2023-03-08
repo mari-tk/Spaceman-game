@@ -35,6 +35,9 @@ function init() {
   currentWordEl.innerText = '';
   currentWordEl.style.color = 'black';
 
+  //Display alphabet container
+  alphabetContainer.style.display = 'block';
+
   //Chooses random word from WORDBANK and saves each letter to the guessedWord array
   const rand = Math.floor(Math.random() * WORDBANK.length);
   guessedWord = (WORDBANK[rand].split(""));
@@ -89,6 +92,7 @@ function renderGuessedWord() {
       document.getElementById('span-' + idx).innerText = '_';
     }
   }) 
+  if (currentWordEl.innerText === currentWord) return showWin()
 }
 
 // renders alphabet on the page and disables clicked letter buttons
@@ -148,5 +152,15 @@ function showLoss() {
 
   //create button try again
   startButton.innerText = 'TRY AGAIN ?';
+  startButton.style.display = 'block';
+  alphabetContainer.style.display = 'none';
+}
+
+function showWin() {
+  //disable all alphabet
+  alphabetContainer.style.display = 'none';
+
+  //create button try again
+  startButton.innerText = 'YOU WON! TRY AGAIN ?';
   startButton.style.display = 'block';
 }
