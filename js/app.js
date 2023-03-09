@@ -73,7 +73,11 @@ function render() {
   // if (everySpaceshipComponentIsVisible()) {
   //   document.getElementById(spaceman).visibility = false
   // }
+
+
 }
+
+
 
 // for each letter in guessed word create elenent span and set innerText=letter if letter is included; else add ' ' to the span
 function renderGuessedWord() {
