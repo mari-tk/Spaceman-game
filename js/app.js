@@ -14,6 +14,7 @@ let currentWord;
 const startButton = document.getElementById('start');
 const alphabetContainer = document.getElementById('alphabet');
 const currentWordEl = document.getElementById('word');
+const spacemanEl = document.getElementById('spaceman');
 
 /*----- event listeners -----*/
 startButton.addEventListener('click', init);
@@ -35,22 +36,24 @@ function init() {
   currentWordEl.innerText = '';
   currentWordEl.style.color = 'black';
 
-  //Display alphabet container
+  // Display alphabet container
   setVisibility(alphabetContainer, 'block');
 
-  //Chooses random word from WORDBANK and saves each letter to the guessedWord array
+  // Show spaceman
+  setVisibility(spacemanEl, 'block');
+
+  // Chooses random word from WORDBANK and saves each letter to the guessedWord array
   const rand = Math.floor(Math.random() * WORDBANK.length);
   guessedWord = WORDBANK[rand].split('');
 
-  //Debugging purposes only - display current word
+  // Debugging purposes only - display current word
   currentWord = WORDBANK[rand];
   console.log(currentWord);
 
-  //Calls function render()
+  // Calls function render()
   render(); 
 }
 
-//TODO: refactor rendering, convert to functions
 // Calls all page renders: renderSpaceship, renderGuessedWord, renderAlphabet
 function render() {
   // Set all spaceship components to be invisible
@@ -66,11 +69,6 @@ function render() {
   renderGuessedWord();
   renderAlphabet();
   renderSpaceship();
-
-  //Makes spaceman invisible if player used all 5 guesses and makes another unsuccessful turn
-  // if (everySpaceshipComponentIsVisible()) {
-  //   document.getElementById(spaceman).visibility = false
-  // }
 }
 
 // for each letter in guessed word create elenent span and set innerText=letter if letter is included; else add ' ' to the span
@@ -89,6 +87,7 @@ function renderGuessedWord() {
   });
 
   if (currentWordEl.innerText === currentWord) {
+    
     return showMessage('win');
   }
 }
@@ -96,13 +95,13 @@ function renderGuessedWord() {
 // renders alphabet on the page and disables clicked letter buttons
 function renderAlphabet() {
   ALPHABET.split('').forEach(letter => {
-    //check if the button is not on the page then add it
+    // check if the button is not on the page then add it
     if (!getLetterBtn(letter)) {
       const letterBtn = createChildForParent('button', getLetterBtnId(letter), alphabetContainer);
       letterBtn.innerText = letter;
     }
 
-    //check if the letter was clicked then disable it
+    // check if the letter was clicked then disable it
     if (usedLetters.includes(letter.toLowerCase())) {
       getLetterBtn(letter).disabled = true;
     } else {
@@ -128,6 +127,7 @@ function makeMove(evt) {
   // if user clicked the letter that is not included in word, add +1 to the wrongLetter
   if(!guessedWord.includes(letter.toLowerCase())) {
     if (wrongLetter >= Object.keys(spaceship).length) {
+      setVisibility(spacemanEl, 'none');
       return showMessage('loss');
     }
     wrongLetter += 1;
