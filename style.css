@@ -1,6 +1,6 @@
 body {
   font-family: Helvetica,Arial,sans-serif;
-  min-width: 600px;
+  min-width: 500px;
   margin: 0 auto;
 }
 
@@ -67,20 +67,20 @@ body {
 #word {
   grid-area: word;
   text-align: center;
-  margin: 30px;
+  margin: 5px;
   font-size: 4rem;
   text-align: center;
 }
 
 #alphabet {
   height: 200px;
-  width: 550px;
+  width: 500px;
   grid-area: alphabet;
   text-align: center;
 }
 
 #alphabet button {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 #word span {
