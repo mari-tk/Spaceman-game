@@ -91,7 +91,7 @@ body {
   /* width: 100%; */
   text-align: center;
   position: relative;
-  top: 70px;
+  top: 20px;
   width: 200px;
   height: 200px;
   left: 150px;
@@ -103,11 +103,10 @@ body {
   background-size: contain;
   width: 70px;
   height: 70px;
-  margin: 0 auto;
-  top: -210px;
-  /* left: 5px; */
+  /* top: -210px; */
+  left: 60px;
   /* margin-top: 100px; */
-  position: relative;
+  position: absolute;
 }
 
 #body {
@@ -116,21 +115,20 @@ body {
   background-size: contain;
   width: 170px;
   height: 180px;
-  margin: 0 auto;
-  position: relative;
-  top: -15px;
+  position: absolute;
+  top: 17px;
+  left: 13px;
 }
 
 #lights {
   background-image: url(img/lights.png);
-  background-size: contain; 
-  height: 20px; 
+  background-size: contain;
+  height: 20px;
   background-repeat: no-repeat;
-  width: 110px;
-  margin: 0 auto;
-  position: relative;
-  top: -185px;
-  /* margin-top: -110px; */
+  width: 125px;
+  position: absolute;
+  top: 90px;
+  left: 34px;
 }
 
 #bottom {
@@ -139,9 +137,9 @@ body {
   height: 30px;
   background-repeat: no-repeat;
   width: 87px;
-  margin: 0 auto;
-  position: relative;
-  top: -178px;
+  position: absolute;
+  top: 125px;
+  left: 55px;
 }
 
 #beams {
@@ -150,28 +148,7 @@ body {
   height: 300px;
   background-repeat: no-repeat;
   width: 185px;
-  margin: 0 auto;
-  position: relative;
-  top: -185px;
-  left: 5px;
-}
-
-/* .container {
-  margin: auto;
-} */
-
-.top {
-
-}
-.body {
-
-}
-.lights {
-  
-}
-.bottom {
-  
-}
-.beams {
-  
+  position: absolute;
+  top: 147px;
+  left: 10px;
 }
