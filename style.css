@@ -67,7 +67,6 @@ body {
 #word {
   grid-area: word;
   text-align: center;
-  margin: 5px;
   font-size: 4rem;
   text-align: center;
 }
