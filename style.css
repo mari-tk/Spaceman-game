@@ -7,13 +7,13 @@ body {
 #gameboard {
   display:grid;
   grid-template-areas:
-  "welcome-msg welcome-msg"
-  "rules-msg rules-msg"
-  "astronaut scene"
-  "start-btn start-btn"
-  "word word"
-  "alphabet alphabet";
-  grid-template-columns: 1fr 5fr;
+  "welcome-msg"
+  "rules-msg"
+  "scene"
+  "start-btn"
+  "word"
+  "alphabet";
+  grid-template-columns: 1fr;
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
@@ -24,14 +24,14 @@ body {
   margin: 50px; 
   font-size: 2rem;
   text-align: center;
-  grid-column: span 2;
+  
   grid-area: welcome-msg;
 }
 
 #rules-msg {
   font-size: 1rem;
   text-align: center;
-  grid-column: span 2;
+  
   grid-area: rules-msg;
   margin-bottom: 10px; 
 }
@@ -43,15 +43,6 @@ body {
   margin-top: 10px;
 }
 
-#spaceman {
-  grid-area: astronaut;
-}
-
-#spaceman img {
-  height: 100px;
-  width: 100px;
-}
-
 #scene {
   grid-area: scene;
   background-image: url(img/backgroung.png);
@@ -59,13 +50,27 @@ body {
   background-size: contain; 
   height: 500px;
   width: 500px;
+  position: relative;
 }
+
+#spaceman {
+  background-image: url(img/astronaut-emote.png);
+  background-size: 100% 100%;
+  top: 250px;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
+
+/* #spaceman img {
+  height: 100px;
+  width: 100px;
+} */
 
 #word {
   grid-area: word;
   text-align: center;
   margin: 30px;
-  grid-column: span 2;
   font-size: 4rem;
   text-align: center;
 }
@@ -91,7 +96,7 @@ body {
 #spaceship-components {
   /* width: 100%; */
   text-align: center;
-  position: relative;
+  position: absolute;
   top: 20px;
   width: 200px;
   height: 200px;
