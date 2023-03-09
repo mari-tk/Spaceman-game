@@ -24,14 +24,12 @@ body {
   margin: 50px; 
   font-size: 2rem;
   text-align: center;
-  
   grid-area: welcome-msg;
 }
 
 #rules-msg {
   font-size: 1rem;
   text-align: center;
-  
   grid-area: rules-msg;
   margin-bottom: 10px; 
 }
