@@ -27,7 +27,7 @@ body {
   font-size: 2rem;
   text-align: center;
   grid-area: welcome-msg;
-  background-color: white;
+  background-color: rgb(239, 239, 239);
 }
 
 #rules-msg {
@@ -36,7 +36,7 @@ body {
   text-align: center;
   grid-area: rules-msg;
   margin: 10px;
-  background-color: white;
+  background-color: rgb(239, 239, 239);
 }
 
 #start{
