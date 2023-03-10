@@ -23,7 +23,52 @@ Which planet computer guessed for you? Make sure NOT to collect all the UFO comp
 
 ## Some code parts
 - challenging function
-- favorite function*
+```JS
+function renderGuessedWord() {
+  guessedWord.forEach((letter, idx) => {
+    //check if span with id not exists then create span
+    if (!getWordLetterEl(idx)) {
+      createChildForParent('span', makeWordLeterElId(idx), currentWordEl);
+    }
+
+    if (usedLetters.includes(letter)) {
+      getWordLetterEl(idx).innerText = letter;
+    } else {
+      getWordLetterEl(idx).innerText = '_';
+    }
+  });
+
+  if (currentWordEl.innerText === currentWord) {
+    
+    return showMessage('win');
+  }
+}
+```
+
+- favorite function
+```JS
+function makeMove(evt) {
+  if (evt.target.tagName !== 'BUTTON') return;
+  const letter = evt.target.innerText
+  usedLetters.push(letter.toLowerCase());
+  // if user clicked the letter that is not included in word, add +1 to the wrongLetter
+  if(!guessedWord.includes(letter.toLowerCase())) {
+    if (wrongLetter >= Object.keys(spaceship).length) {
+      setVisibility(spacemanEl, 'none');
+      return showMessage('loss');
+    }
+    wrongLetter += 1;
+  }
+
+  // handle wrong letters
+  for (let i = 0; i < wrongLetter;  i++) {
+    const objName = Object.keys(spaceship)[i]
+    spaceship[objName] = true;
+  }
+
+  render();
+}
+```
 
 ## Unique elements
 In this project I added some nice graphic elements from Freepik. Freepic is an online resource with a lot of free to use graphics. I added credit links to the bottom of the game page.
@@ -33,5 +78,5 @@ In this project I added some nice graphic elements from Freepik. Freepic is an o
 | Type | Description |
 | :--------- | :-------: |
 | Add sound| 1. Add space themed music playing in the background. <br>2. Add sound for win/loss.|
-|Animation|When spaceship took Spaceman, add spaceship fly away animation.|
-|Responsiveness|Add more advanced mobile support.|
+| Animation | When spaceship took Spaceman, add spaceship fly away animation.|
+| Responsiveness |Add more advanced mobile support.|
