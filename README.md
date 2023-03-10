@@ -19,7 +19,7 @@ After user opens the game, it shows up empty board with clickable "Start" button
 
 ## Getting Started
 Which planet computer guessed for you? Make sure NOT to collect all the UFO components or Aliens will take you on their ship 👽
-[Demo Link](https://mariiatkachenko.github.io/Spaceman-game/){target="_blank"}
+[Demo Link](https://mariiatkachenko.github.io/Spaceman-game?target=_blank)
 
 ## Some code parts
 - Challenging function
