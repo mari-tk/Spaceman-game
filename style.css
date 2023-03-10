@@ -28,6 +28,7 @@ body {
   text-align: center;
   grid-area: welcome-msg;
   background-color: rgb(239, 239, 239);
+  padding: 0 5px 0 5px;
 }
 
 #rules-msg {
@@ -37,6 +38,7 @@ body {
   grid-area: rules-msg;
   margin: 10px;
   background-color: rgb(239, 239, 239);
+  padding: 0 5px 0 5px;
 }
 
 #start{
