@@ -19,10 +19,14 @@ After user opens the game, it shows up empty board with clickable "Start" button
 
 ## Getting Started
 Which planet computer guessed for you? Make sure NOT to collect all the UFO components or Aliens will take you on their ship 👽
-<a href="https://mariiatkachenko.github.io/Spaceman-game" target="_blank">Demo Link</a>
+[Demo Link](https://mariiatkachenko.github.io/Spaceman-game/)
 
 ## Some code parts
 - Challenging function
+This function was challenging for me because it depends on many actions that happen in the game and on the states.
+Firstly, I need to check value of used letters and compare it to each letter of computer's guessed word. And regarding of that, show corresponding letters on the screen.
+I had a bug with that function in the beginning because I was creating span elements with id of each letter. Because some letters have multiple same letters, they were not showing up because id should be unique :) 
+
 ```JS
 function renderGuessedWord() {
   guessedWord.forEach((letter, idx) => {
@@ -46,6 +50,7 @@ function renderGuessedWord() {
 ```
 
 - Favorite function
+I think it is my favorite function because it has a bit of every steps and logic of the game. It is updating some eventual states such as used letters and spaceship components visibility. And it is constantly checking if user entered the correct letter which is not included in the computer's word.
 ```JS
 function makeMove(evt) {
   if (evt.target.tagName !== 'BUTTON') return;
