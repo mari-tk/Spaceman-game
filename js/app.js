@@ -1,7 +1,6 @@
 /*----- constants -----*/
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const WORDBANK = ['jupiter', 'saturn', 'uranus', 'mercury', 'venus', 'earth', 'neptune', 'mars']
-//background Space theme music?
 
 /*----- app's state (variables) -----*/
 let guessedWord;
@@ -48,7 +47,6 @@ function init() {
 
   // Debugging purposes only - display current word
   currentWord = WORDBANK[rand];
-  console.log(currentWord);
 
   // Calls function render()
   render(); 
@@ -59,7 +57,6 @@ function render() {
   // Set all spaceship components to be invisible
   for (const component in spaceship) {
     setVisibility(document.getElementById(component),'none');
-    // setVisibility(document.getElementById(component), 'none');
   }
 
   // Makes Start button invisible
